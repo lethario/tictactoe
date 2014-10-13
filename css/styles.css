@@ -1,0 +1,172 @@
+body {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  padding-top: 12.5vmin;
+  background-color: white;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+
+.square {
+  margin: 0 auto;
+  width: 75vmin;
+  height: 75vmin;
+}
+
+.icon {
+  font-size: 2em;
+  color: white;
+}
+
+.available {
+  color: white;
+}
+
+.available {
+   opacity: 0;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.available:hover {
+  opacity: 0.5;
+  color: #26C281;
+}
+
+.fa {
+  font-size: 15vmin;
+}
+
+#gamediv, #textdiv {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+#gamediv {
+  z-index: -1;
+}
+
+#textdiv{
+  padding-top: 20vmin;
+}
+
+.hiddendiv {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 1s,opacity 0.5s ease;
+  -moz-transition: visibility 0s linear 1s,opacity 0.5s ease;
+  -webkit-transition: visibility 0s linear 1s,opacity 0.5s ease;
+}
+
+.visiblediv {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.transparent {
+  opacity: 0.25;
+  transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.btn-group-vertical {
+  width: 15em;
+}
+
+.btn {
+  -webkit-transition: color .25s, background-color .25s ease;
+	-moz-transition: color .25s, background-color .25s ease;
+	-o-transition: color .25s, background-color .25s ease;
+	transition: color .25s, background-color .25s ease;
+  border: 0;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.btn-computer {
+  background-color: #FFA07A;
+  border-color: #FFA07A;
+}
+.btn-computer:hover,
+.btn-computer:focus,
+.btn-computer:active,
+.btn-computer.active {
+  background-color: #ff8e61;
+  border-color: #ff7c47;
+}
+.btn-computer.disabled:hover,
+.btn-computer.disabled:focus,
+.btn-computer.disabled:active,
+.btn-computer.disabled.active,
+.btn-computer[disabled]:hover,
+.btn-computer[disabled]:focus,
+.btn-computer[disabled]:active,
+.btn-computer[disabled].active,
+fieldset[disabled] .btn-computer:hover,
+fieldset[disabled] .btn-computer:focus,
+fieldset[disabled] .btn-computer:active,
+fieldset[disabled] .btn-computer.active {
+  background-color: #FFA07A;
+  border-color: #FFA07A;
+}
+
+.btn-user {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+.btn-user:hover,
+.btn-user:focus,
+.btn-user:active,
+.btn-user.active {
+  background-color: #17a689;
+  border-color: #148f77;
+}
+.btn-user.disabled:hover,
+.btn-user.disabled:focus,
+.btn-user.disabled:active,
+.btn-user.disabled.active,
+.btn-user[disabled]:hover,
+.btn-user[disabled]:focus,
+.btn-user[disabled]:active,
+.btn-user[disabled].active,
+fieldset[disabled] .btn-user:hover,
+fieldset[disabled] .btn-user:focus,
+fieldset[disabled] .btn-user:active,
+fieldset[disabled] .btn-user.active {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+td {
+  width: 25vmin;
+  height: 25vmin;
+  border: 0.5vmin solid #CCCCCC;
+}
+
+table {
+  border: 1vmin solid #FFFFFF;
+}
+
+.user {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  color: #1abc9c;
+}
+
+.computer {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  color: #FFA07A;
+}
