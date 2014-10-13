@@ -71,7 +71,7 @@ body {
 }
 
 .transparent {
-  opacity: 0.25;
+  opacity: 0.4;
   transition: opacity 1s ease;
   -moz-transition: opacity 1s ease;
   -webkit-transition: opacity 1s ease;
@@ -169,4 +169,12 @@ table {
   -moz-transition: opacity .25s ease-in-out;
   -webkit-transition: opacity .25s ease-in-out;
   color: #FFA07A;
+}
+
+.grey {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  color: #CCCCCC;
 }

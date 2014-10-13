@@ -202,23 +202,25 @@ var computerStepsRandom = function() {
   }
 }
 
-var isWinningMove = function (symbol) {
+var winRow = function (symbol) {
   row = [1,4,7];
   for (var k in row) {
     if (haveSymbol([row[k],row[k]+1,row[k]+2],symbol)) {
-      return true;
+      return [row[k],row[k]+1,row[k]+2];
     }
   }
   row = [1,2,3];
   for (var k in row) {
     if (haveSymbol([row[k],row[k]+3,row[k]+6],symbol)) {
-      return true;
+      return [row[k],row[k]+3,row[k]+6];
     }
   }
-  if (haveSymbol([1,5,9],symbol) || haveSymbol([3,5,7],symbol)) {
-    return true;
+  if (haveSymbol([1,5,9],symbol)) {
+    return [1,5,9];
+  } else if (haveSymbol([3,5,7],symbol)) {
+    return [3,5,7];
   }
-  return false;
+  return null;
 }
 
 var startGame = function () {
@@ -242,18 +244,18 @@ var takeTurn = function (square,symbol) {
     markSquareUI(square,symbol);
     computer.turn = !computer.turn;
 
-    if (isWinningMove(user.symbol)) {
+    if (winRow(user.symbol)) {
       console.log("You win! Please tell Oliver how you managed that!");
-      endGameUI("You win!");
+      endGameUI("You win!",winRow(user.symbol));
       return;
-    } else if (isWinningMove(computer.symbol)) {
+    } else if (winRow(computer.symbol)) {
       console.log("I win!");
-      endGameUI("I win!");
+      endGameUI("I win!",winRow(computer.symbol));
       return;
     }
     if (numOfAvailableSquares(Object.keys(board)) === 0) {
       console.log("It's a draw!");
-      endGameUI("Draw!");
+      endGameUI("Draw!",[]);
       return;
     }
   }
@@ -345,7 +347,13 @@ var setUpBoard = function(booleanvalue) {
   startGame();
 }
 
-var endGameUI = function (text) {
+var endGameUI = function (text,winrow) {
+  allsquares = Object.keys(board);
+  for (var sq in allsquares) {
+    if (winrow.indexOf(parseInt(allsquares[sq])) === -1 && !isAvailable(allsquares[sq])) {
+      addClassToSquare(allsquares[sq],"grey");
+    }
+  }
   changeHeading(text);
   jQuery("#gamediv").addClass('transparent');
   jQuery("#textdiv").removeClass('hiddendiv');
